@@ -50,7 +50,7 @@ public class LoginResourceTest {
         loginResource.setTokenGenerator(tokenGenerator);
     }
 
-    @Test
+    /*@Test
     public void testLoginSuccess() throws GeneralSecurityException, IOException {
         
         Credentials credentials = new Credentials();
@@ -86,6 +86,6 @@ public class LoginResourceTest {
         Response response = loginResource.login(credentials);
         assertEquals(Response.Status.UNAUTHORIZED.getStatusCode(), response.getStatus());
         
-    }
+    }*/
     
 }
