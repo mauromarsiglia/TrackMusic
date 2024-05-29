@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "67cd5aa4-96f6-4447-8991-2913f77e596f",
+		"name": "TrackMusic",
+		"description": "TrackMusic es una plataforma completa para la gestión eficiente de listas de reproducción de música. Con tecnologías modernas como Java, Jakarta, JPA y JWT, TrackMusic ofrece una experiencia robusta y segura para los amantes de la música que desean crear y organizar sus propias colecciones de canciones.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6597352"
+	},
+	"item": [
+		{
+			"name": "PlayLists",
+			"item": [
+				{
+					"name": "Get PlayLists /lists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiJcL3ByaXZhdGVLZXkucGVtIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJNYXVybyBNYXJzaWdsaWEiLCJzdWIiOiJNYXVybyIsInVwbiI6Ik1hcnNpZ2xpYSIsImF1dGhfdGltZSI6MTcxNjM1OTcxOCwiaXNzIjoicXVpcHV4LmNvbSIsImdyb3VwcyI6WyJVU0VSIl0sImV4cCI6MTc0MjI4ODcxOCwiaWF0IjoxNzE2MzU5NzE4LCJqdGkiOiIxIn0.kJ_8ePA2Xy41ZH_l6rXA3h7O9XURk_-xUnBL-A7AukmYX4NKOtmA5W9rtMHwP1XR6Cp_Qoset2jAGa7H2FQJfmfFruqK5eA4oQTZGN30MFwysZW3jfKP2PPSSzj0hPp2WmJYhQw3c-P6feI_gCffVp--u-sW82hgGPZv7fMndgIzILO4Z3hnqLMjLbnZr2Y5X14Zw9GW-HA15-oyomK3UL7_dPwD1IHboUNzRIa-mEx4GKDp2JUhR2OVQErX96uIl2TVAje1Wol6SChUPjt5V6jNUY5PhcoZPyr0hzOndqyk5E8Hpz1RGa0lNQ4ShcMH-q8TJMY2Qjw0lCa9fEqFsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/lists",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Post data /lists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiJcL3ByaXZhdGVLZXkucGVtIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJNYXVybyBNYXJzaWdsaWEiLCJzdWIiOiJNYXVybyIsInVwbiI6Ik1hcnNpZ2xpYSIsImF1dGhfdGltZSI6MTcxNjM4MzE4MSwiaXNzIjoicXVpcHV4LmNvbSIsImdyb3VwcyI6WyJVU0VSIl0sImV4cCI6MTc0MjMxMjE4MSwiaWF0IjoxNzE2MzgzMTgxLCJqdGkiOiIxIn0.B7wdHy-vVIBEHOxws9-UPwHZ2avpEyjIl3gOd1mQGZOlnklaJxBlYOyPuM9a1ZQVq_alTc7DcNMwpY4ll2wZdazASJ8IzCX40ke8j-vhy9cuALlnyY36uBRr7JCorq27yMSYjee1WKwEfvzQwjtmrmUqQZPuhPq4SrNeb3X9yqUU9vbQGdPawdxaXiCzb--Oig7v5g1ZpRpcbwhV9odbe8bsgDh6HSWPm2nk6k7M1srkFVJpXAPfZjReX7g7RxLKelVJdk0K3bbiZEWfWjiAS376d1LnMHT2s0e95A8An0l-1k5dqlXH22EnXCAfwpf6sEuqmd99GOo4KYBy--UkQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Playlist 10\",\n    \"descripcion\": \"This is a sample playlist 10\",\n    \"canciones\": [\n        {\n            \"titulo\": \"Song Title 3\",\n            \"artista\": \"Artist 1\",\n            \"album\": \"Album 1\",\n            \"anno\": \"2021\",\n            \"genero\": \"Genre 1\"\n        },\n        {\n            \"titulo\": \"Song Title 4\",\n            \"artista\": \"Artist 2\",\n            \"album\": \"Album 2\",\n            \"anno\": \"2022\",\n            \"genero\": \"Genre 2\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/lists",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete data /lists/{listName}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful DELETE request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiJcL3ByaXZhdGVLZXkucGVtIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJNYXVybyBNYXJzaWdsaWEiLCJzdWIiOiJNYXVybyIsInVwbiI6Ik1hcnNpZ2xpYSIsImF1dGhfdGltZSI6MTcxNjM4Nzc2OSwiaXNzIjoicXVpcHV4LmNvbSIsImdyb3VwcyI6WyJVU0VSIl0sImV4cCI6MTc0MjMxNjc2OSwiaWF0IjoxNzE2Mzg3NzY5LCJqdGkiOiIxIn0.MJ2zaNvO2h21u0nZcpw5dTRcVfVEyFf49_KWXQftXUh3ko6VmnVlJKh7lRnMnUANOGZoEbhvyBbw_foiz7pXoVbhjXtbV71nIW3KXmP8m0Kl1_YtIvPkJThR7OARqPm10zH-dSNORGEnZP6Y2cFmJ5I3bj_TNXF1sPs4BxNzUveL0JGNXGK5M86ntke_hURG7sQ7TuJSFXsgJbdPRxEEx7I5d4YyQkifvUmR7JR12vh8en0HDrp4A-2UrJBTF4n49NTljhVTFcC-HbjlX-lE_3u69VRwQFWDLr9Lqunle4hmUanA_416y5GjPTvWqPfv_f8085fGOS9lSL6KGzBDpw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/lists/Playlist 1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists",
+								"Playlist 1"
+							]
+						},
+						"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Get PlayList /lists/{listName}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiJcL3ByaXZhdGVLZXkucGVtIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJNYXVybyBNYXJzaWdsaWEiLCJzdWIiOiJNYXVybyIsInVwbiI6Ik1hcnNpZ2xpYSIsImF1dGhfdGltZSI6MTcxNjM1OTcxOCwiaXNzIjoicXVpcHV4LmNvbSIsImdyb3VwcyI6WyJVU0VSIl0sImV4cCI6MTc0MjI4ODcxOCwiaWF0IjoxNzE2MzU5NzE4LCJqdGkiOiIxIn0.kJ_8ePA2Xy41ZH_l6rXA3h7O9XURk_-xUnBL-A7AukmYX4NKOtmA5W9rtMHwP1XR6Cp_Qoset2jAGa7H2FQJfmfFruqK5eA4oQTZGN30MFwysZW3jfKP2PPSSzj0hPp2WmJYhQw3c-P6feI_gCffVp--u-sW82hgGPZv7fMndgIzILO4Z3hnqLMjLbnZr2Y5X14Zw9GW-HA15-oyomK3UL7_dPwD1IHboUNzRIa-mEx4GKDp2JUhR2OVQErX96uIl2TVAje1Wol6SChUPjt5V6jNUY5PhcoZPyr0hzOndqyk5E8Hpz1RGa0lNQ4ShcMH-q8TJMY2Qjw0lCa9fEqFsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/lists/Playlist 10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"lists",
+								"Playlist 10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Genres /track/genres",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiJcL3ByaXZhdGVLZXkucGVtIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJNYXVybyBNYXJzaWdsaWEiLCJzdWIiOiJNYXVybyIsInVwbiI6Ik1hcnNpZ2xpYSIsImF1dGhfdGltZSI6MTcxNjkxNjE3MSwiaXNzIjoicXVpcHV4LmNvbSIsImdyb3VwcyI6WyJVU0VSIl0sImV4cCI6MTc0Mjg0NTE3MSwiaWF0IjoxNzE2OTE2MTcxLCJqdGkiOiIxIn0.DIqNW36c2-MrtnldYuFSjrBwjLZJgqb1l5FBXALaF9b6HrnpgN3U2zKaJkPWjb4ekQmHS2z01oL9CwgszuVHkD4stnN9iYBe8Y70LxSQl4dPEfWIkH-0eTkZUpDj0llfu6-VJo6syE3OARo08moWZvaD7BgPOfv_ZpmZM4WD3Edxp2PoGZxhMQPTjAxwSnhWdVjjY8EPsUM1QygywJYora--oSsCsrOo74Ms5YvNe1XU10BD0qIueXWzAv2VL1xdreyDS4UuCbQjNFa5_JcqBr7XBXQxuExOn-5wb57RQrPvEDjPMd_e8HCu3jRr0fGDKsD4NhRTZCHc74TylzN0lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/track/genres",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"track",
+								"genres"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Permite ver todas las listas de reproducción existentes."
+		},
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"mauro.marsiglia@gmail.com\",\n    \"password\":\"D3v3l0p3rS3l3cc10n4d0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"mauro.marsiglia@gmail.com\",\n    \"password\":\"D3v3l0p3rS3l3cc10n4d0\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Payara Server  5.2021.3 #badassfish"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/4.0 JSP/2.3 (Payara Server  5.2021.3 #badassfish Java/Oracle Corporation/11)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "763"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"body\": {\n        \"email\": \"mauro.marsiglia@gmail.com\",\n        \"lastname\": \"Marsiglia\",\n        \"name\": \"Mauro\",\n        \"token\": \"eyJraWQiOiJcL3ByaXZhdGVLZXkucGVtIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJNYXVybyBNYXJzaWdsaWEiLCJzdWIiOiJNYXVybyIsInVwbiI6Ik1hcnNpZ2xpYSIsImF1dGhfdGltZSI6MTcxNjM1OTcxOCwiaXNzIjoicXVpcHV4LmNvbSIsImdyb3VwcyI6WyJVU0VSIl0sImV4cCI6MTc0MjI4ODcxOCwiaWF0IjoxNzE2MzU5NzE4LCJqdGkiOiIxIn0.kJ_8ePA2Xy41ZH_l6rXA3h7O9XURk_-xUnBL-A7AukmYX4NKOtmA5W9rtMHwP1XR6Cp_Qoset2jAGa7H2FQJfmfFruqK5eA4oQTZGN30MFwysZW3jfKP2PPSSzj0hPp2WmJYhQw3c-P6feI_gCffVp--u-sW82hgGPZv7fMndgIzILO4Z3hnqLMjLbnZr2Y5X14Zw9GW-HA15-oyomK3UL7_dPwD1IHboUNzRIa-mEx4GKDp2JUhR2OVQErX96uIl2TVAje1Wol6SChUPjt5V6jNUY5PhcoZPyr0hzOndqyk5E8Hpz1RGa0lNQ4ShcMH-q8TJMY2Qjw0lCa9fEqFsQ\"\n    },\n    \"message\": \"SUCCESS\",\n    \"service\": \"/login\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
