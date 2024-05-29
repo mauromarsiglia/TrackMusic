@@ -48,6 +48,23 @@ Puedes usar Postman para probar los endpoints de la API:
 
 ### Endpoints
 
+#### Iniciar sesión
+
+- **URL:** `/login`
+- **Método:** `POST`
+- **Descripción:** Autenticar un usuario y devolver un token JWT.
+- **Request Body:**
+  ```json
+  {
+    "email": "mauro.marsiglia@gmail.com",
+    "password": "D3v3l0p3rS3l3cc10n4d0"
+  }
+  ```
+- **Responses:**
+  - **200 OK:** Autenticación exitosa. Devuelve un token JWT.
+  - **400 Bad Request:** Credenciales inválidas.
+  - **401 Unauthorized:** Usuario no encontrado.
+
 #### Añadir una nueva lista de reproducción
 
 - **URL:** `/lists`
@@ -98,23 +115,6 @@ Puedes usar Postman para probar los endpoints de la API:
 - **Responses:**
   - **204 No Content:** Lista de reproducción borrada exitosamente.
   - **404 Not Found:** La lista de reproducción no existe.
-
-#### Iniciar sesión
-
-- **URL:** `/login`
-- **Método:** `POST`
-- **Descripción:** Autenticar un usuario y devolver un token JWT.
-- **Request Body:**
-  ```json
-  {
-    "email": "mauro.marsiglia@gmail.com",
-    "password": "D3v3l0p3rS3l3cc10n4d0"
-  }
-  ```
-- **Responses:**
-  - **200 OK:** Autenticación exitosa. Devuelve un token JWT.
-  - **400 Bad Request:** Credenciales inválidas.
-  - **401 Unauthorized:** Usuario no encontrado.
 
 #### Obtener géneros musicales de Spotify
 
