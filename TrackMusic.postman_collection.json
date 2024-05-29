@@ -32,7 +32,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJraWQiOiJcL3ByaXZhdGVLZXkucGVtIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJNYXVybyBNYXJzaWdsaWEiLCJzdWIiOiJNYXVybyIsInVwbiI6Ik1hcnNpZ2xpYSIsImF1dGhfdGltZSI6MTcxNjM1OTcxOCwiaXNzIjoicXVpcHV4LmNvbSIsImdyb3VwcyI6WyJVU0VSIl0sImV4cCI6MTc0MjI4ODcxOCwiaWF0IjoxNzE2MzU5NzE4LCJqdGkiOiIxIn0.kJ_8ePA2Xy41ZH_l6rXA3h7O9XURk_-xUnBL-A7AukmYX4NKOtmA5W9rtMHwP1XR6Cp_Qoset2jAGa7H2FQJfmfFruqK5eA4oQTZGN30MFwysZW3jfKP2PPSSzj0hPp2WmJYhQw3c-P6feI_gCffVp--u-sW82hgGPZv7fMndgIzILO4Z3hnqLMjLbnZr2Y5X14Zw9GW-HA15-oyomK3UL7_dPwD1IHboUNzRIa-mEx4GKDp2JUhR2OVQErX96uIl2TVAje1Wol6SChUPjt5V6jNUY5PhcoZPyr0hzOndqyk5E8Hpz1RGa0lNQ4ShcMH-q8TJMY2Qjw0lCa9fEqFsQ",
+									"value": "eyJraWQiOiJcL3ByaXZhdGVLZXkucGVtIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJNYXVybyBNYXJzaWdsaWEiLCJzdWIiOiJNYXVybyIsInVwbiI6Ik1hcnNpZ2xpYSIsImF1dGhfdGltZSI6MTcxNjk1Mzc0MywiaXNzIjoicXVpcHV4LmNvbSIsImdyb3VwcyI6WyJVU0VSIl0sImV4cCI6MTc0Mjg4Mjc0MywiaWF0IjoxNzE2OTUzNzQzLCJqdGkiOiIxIn0.Ily-gWf2nf618D5cdWKCpwI1NT_iOnnTipFKMqS_uDFLKEbrfPhHFiVJ55zBgQxzn1z1Xt2ZBVlkFWDodV3fTnohn7HEE1DKp5CIRyaVBlvNAEosge1WFCd1JqQpKuDbKOE5R5QpTcwb3ez9p0j1_KhPhil9O_Gl4n8hqWaqCcDWp5XuZ58Ju1-8a3TYaLvVb8optbAMTxpwZ8t3fB0UFKFc_ftZKWPmoJXUxIgoTRNMkRBPYNhBPqrJ6O9SRiLGEMmdD-bW0qJTZGVc7VQG_8bIi6UGpju9g49F6FRt-cTV3UkYgX8bHZyXSTMi093CwKta3w9OWjldUdiF-B9LQA",
 									"type": "string"
 								}
 							]
@@ -84,7 +84,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nombre\": \"Playlist 10\",\n    \"descripcion\": \"This is a sample playlist 10\",\n    \"canciones\": [\n        {\n            \"titulo\": \"Song Title 3\",\n            \"artista\": \"Artist 1\",\n            \"album\": \"Album 1\",\n            \"anno\": \"2021\",\n            \"genero\": \"Genre 1\"\n        },\n        {\n            \"titulo\": \"Song Title 4\",\n            \"artista\": \"Artist 2\",\n            \"album\": \"Album 2\",\n            \"anno\": \"2022\",\n            \"genero\": \"Genre 2\"\n        }\n    ]\n}",
+							"raw": "{\n    \"nombre\": \"Playlist 100\",\n    \"descripcion\": \"This is a sample playlist 100\",\n    \"canciones\": [\n        {\n            \"titulo\": \"Song Title 3\",\n            \"artista\": \"Artist 1\",\n            \"album\": \"Album 1\",\n            \"anno\": \"2021\",\n            \"genero\": \"Genre 1\"\n        },\n        {\n            \"titulo\": \"Song Title 4\",\n            \"artista\": \"Artist 2\",\n            \"album\": \"Album 2\",\n            \"anno\": \"2022\",\n            \"genero\": \"Genre 2\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -139,13 +139,13 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "{{base_url}}/lists/Playlist 1",
+							"raw": "{{base_url}}/lists/Playlist 100",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"lists",
-								"Playlist 1"
+								"Playlist 100"
 							]
 						},
 						"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
